@@ -11,13 +11,20 @@ export default {
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <Button {...args}> Ant Button </Button>;
+const Template = (args) => <Button {...args}> {args.label} </Button>;
 
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 
 export const Primary = Template.bind({});
 Primary.args = {
   type: 'primary',
+  label: 'Ant Button'
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  type: 'default',
+  label: 'Ant Button'
 };
 
 
