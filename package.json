@@ -8,7 +8,7 @@
     "@testing-library/react": "^11.0.0",
     "@testing-library/user-event": "^11.1.0",
     "antd": "^4.13.0",
-    "craco-less": "^1.17.0",
+    "craco-less": "^1.20.0",
     "react": "^16.14.0",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.4"
@@ -16,10 +16,22 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test"
+    "test": "craco test",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
   },
   "browserslist": {
     "production": [
@@ -32,5 +44,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.5.6",
+    "@storybook/addon-essentials": "^6.5.6",
+    "@storybook/addon-interactions": "^6.5.6",
+    "@storybook/addon-links": "^6.5.6",
+    "@storybook/builder-webpack4": "^6.5.6",
+    "@storybook/manager-webpack4": "^6.5.6",
+    "@storybook/node-logger": "^6.5.6",
+    "@storybook/preset-ant-design": "^0.0.2",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.5.6",
+    "@storybook/testing-library": "^0.0.11"
   }
 }
